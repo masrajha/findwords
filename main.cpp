@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 const int cols=16, rows=15;
@@ -19,20 +20,38 @@ const char words [rows][cols] = { "tgbwwinterwsesn",
                             "pdcrzmsngrdnrpz", 
                             "ohnkzwaterjgtra"};
 
-char *getCols(int);
+char *getWordVertical(int);
 char* strrev( char*);
+bool searchVertical(char *);
+
 int main()
 {
-    char *c1=getCols(0);
-    cout<<strrev(c1);
-
+    char word[]="zogy";
+    if (searchVertical(word))
+        cout<<"Ada";
+        else cout<<"Tidak Ada";
     return 0;
+}
+/**
+ * Fungsi untuk mencari kata secara vertikal dari atas dan dari bawah
+ */ 
+bool searchVertical(char *word){
+    char *s;
+    for (int i=0;i<cols-1;i++){
+        s = getWordVertical(i);
+        if (strstr(s,word)>0)
+            return true;
+        if (strstr(strrev(s),word)>0)
+            return true;
+        
+    }
+    return false;
 }
 
 /** 
  * Fungsi untuk mengambil string dari kolom ke i 
  */
-char *getCols(int i){
+char *getWordVertical(int i){
     char *ret=new char;
 
     for (int j=0;j<cols-1;j++){
