@@ -1,5 +1,8 @@
 # findwords
-Project untuk menyelesaikan findwords problem
+Project untuk menyelesaikan findwords problem di https://candostreet.com/blog-kids/2012/02/a-new-word-jumble/ untuk puzzle yang lain bisa disesuaikan, misal dari https://weneedfun.com/word-games/.
+
+Problem Description:
+
 Buat program dengan kosep pointer bahasa C++ untuk menyelesaikan permainan cari kata dari gambar.
 Matrik karakter disimpan dalam variabel pointer di script kode program. Pencarian kata dilakukan secara vertikal, horizontal dan diagonal.
 
@@ -17,8 +20,8 @@ CONTOH INPUT
 brick
 yellow
 ego
-CONTOH OUTPUT
 
+OUTPUT
 ada
 tidak
 ada
