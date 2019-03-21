@@ -69,7 +69,7 @@ void printDiag()
 }
 
 /**
- * Fungsi untuk mencari kata secara vertikal dari atas dan dari bawah
+ * Fungsi untuk mencari kata secara horizontal dari kiri dan kanan
  */
 bool searchHorizontal(char *word)
 {
