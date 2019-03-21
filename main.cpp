@@ -4,7 +4,7 @@
 using namespace std;
 const int cols = 16, rows = 15;
 
-const char words[rows][cols] = {"tgbwwinterwsesn",
+ char words[rows][cols] = {"tgbwwinterwsesn",
                                 "aaunttmmhfoodnb",
                                 "jlwcqldzmpmvdmr",
                                 "asagmquwvvbsohi",
@@ -23,37 +23,63 @@ const char words[rows][cols] = {"tgbwwinterwsesn",
 char *getWordVertical(int);
 char *strrev(char *);
 bool searchVertical(char *);
-void printDiag(int);
+void printDiag();
+bool searchHorizontal(char *);
 
 int main()
 {
-    char word[] = "zogy";
+    // cout<< *(words+0);
+    // const char *s= *(words+0);
+    // cout<<s;
+    char word[] = "goooddoof";
     if (searchVertical(word))
         cout << "Ada";
-    else
+    else if (searchHorizontal(word))
+        cout << "Ada";
+    else 
         cout << "Tidak Ada";
     cout << endl;
-    printDiag(0);
+    printDiag();
     return 0;
 }
 
-void printDiag(int col)
+void printDiag()
 {
-    int i = col;
+    int i = 0;
 
-    while (i < cols - 1)
+    while (i < rows)
     {
         int k = i;
         int l = 0;
-        while (k < cols -1 && l < rows)
+        char *s=new char;
+        while (k < rows && l < cols - 1)
         {
-            cout << words[k][l];
+            *(s+l)=words[k][l];
             k++;
             l++;
         }
+        s[l]='\0';
+        cout<<s<<"  "<<strrev(s);
         cout<<endl;
         i++;
     }
+}
+
+/**
+ * Fungsi untuk mencari kata secara vertikal dari atas dan dari bawah
+ */
+bool searchHorizontal(char *word)
+{
+    
+    for (int i = 0; i < rows; i++)
+    {
+        char *s = words[i];
+        if (strstr(s, word) > 0)
+            return true;     
+        if (strstr(strrev(s), word) > 0)
+            return true;
+    }
+    return false;
 }
 
 /**
