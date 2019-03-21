@@ -24,7 +24,9 @@ char *getWordVertical(int);
 char *strrev(char *);
 bool searchVertical(char *);
 void printDiag();
+
 bool searchHorizontal(char *);
+
 
 int main()
 {
@@ -51,6 +53,7 @@ void printDiag()
     {
         int k = i;
         int l = 0;
+
         char *s=new char;
         while (k < rows && l < cols - 1)
         {
