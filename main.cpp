@@ -23,7 +23,7 @@ const char words[rows][cols] = {"tgbwwinterwsesn",
 char *getWordVertical(int);
 char *strrev(char *);
 bool searchVertical(char *);
-void printDiag(int);
+void printDiag();
 
 int main()
 {
@@ -33,19 +33,19 @@ int main()
     else
         cout << "Tidak Ada";
     cout << endl;
-    printDiag(0);
+    printDiag();
     return 0;
 }
 
-void printDiag(int col)
+void printDiag()
 {
-    int i = col;
+    int i = 0;
 
-    while (i < cols - 1)
+    while (i < rows)
     {
         int k = i;
         int l = 0;
-        while (k < cols -1 && l < rows)
+        while (k < rows && l < cols - 1)
         {
             cout << words[k][l];
             k++;
